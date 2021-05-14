@@ -59,6 +59,9 @@ jobs:
     - run: ps -ef|grep gwd
     - run: cat /home/runner/.drm4g/var/gwd.log
     - run: cat /home/runner/.drm4g/var/gwd.port
+    - run: sleep 20
+    - run: cat /home/runner/.drm4g/var/gwd.log
+    - run: cat /home/runner/.drm4g/var/gwd.port
     - run: wrf4g exp test submit
     - run: wrf4g exp test status
     - run: sleep 120
