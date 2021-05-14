@@ -14,7 +14,7 @@ jobs:
       max-parallel: 1
       matrix: 
         os: [ubuntu-20.04, ubuntu-18.04, ubuntu-16.04]
-        python-version: [3.8, 3.7, 3.6, 3.5]
+        python-version: [3.6, 3.5]
     name: Python ${{ matrix.python-version }}/${{ matrix.os }}
     steps:
     - uses: actions/checkout@v2
@@ -56,7 +56,9 @@ jobs:
     - run: wrf4g resource
     - run: wrf4g exp test define --from-template=single
     - run: wrf4g exp test create --dir test
-    - run: sleep 10
+    - run: cat /home/runner/.drm4g/var/gwd.port
+    - run: ps -ef|grep gwd
+    - run: cat /home/valva/.drm4g/var/gwd.log
     - run: wrf4g exp test submit
     - run: wrf4g exp test status
     - run: sleep 120
