@@ -56,9 +56,9 @@ jobs:
     - run: wrf4g resource
     - run: wrf4g exp test define --from-template=single
     - run: wrf4g exp test create --dir test
-    - run: cat /home/runner/.drm4g/var/gwd.port
     - run: ps -ef|grep gwd
-    - run: cat /home/valva/.drm4g/var/gwd.log
+    - run: cat /home/runner/.drm4g/var/gwd.log
+    - run: cat /home/runner/.drm4g/var/gwd.port
     - run: wrf4g exp test submit
     - run: wrf4g exp test status
     - run: sleep 120
