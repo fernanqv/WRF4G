@@ -34,7 +34,7 @@ jobs:
         echo $CONDA/bin >> $GITHUB_PATH
     - run: conda install pycrypto docopt sqlalchemy python-dateutil wget
     - run: wget http://personales.gestion.unican.es/fernanqv/drm4g-2.6.13.tar.gz
-    - run: SHELL=/bin/sh pip install drm4g
+    - run: SHELL=/bin/sh pip install drm4g-2.6.13.tar.gz
     - run: SHELL=/bin/sh pip install .
 #    - name: Install dependencies
 #      run: |
